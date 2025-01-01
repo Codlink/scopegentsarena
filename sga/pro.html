@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Scope Gents Arena</title>
+  <style>
+    :root {
+      --primary: #1a1a1a;
+      --secondary: #d4af37;
+      --light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--primary);
+    }
+
+    .header {
+      background: var(--primary);
+      color: var(--light);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 2rem;
+      color: var(--secondary);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+
+    .product-gallery {
+      max-width: 1200px;
+      margin: 80px auto 0;
+      padding: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      background: white;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .item-details {
+      padding: 1rem;
+      background: white;
+    }
+
+    .item-details h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .item-details p {
+      color: #666;
+    }
+
+    .price {
+      color: var(--secondary);
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .category-filter {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .filter-button.active {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .filter-button:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .contact {
+      background: var(--primary);
+      color: var(--light);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .social-links {
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      color: var(--secondary);
+      font-size: 2rem;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      }
+    }
+  </style>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+  <nav>
+    <img src="C:\Users\LENOVO\Desktop\sga\i\logo1.jpg" style="border-radius:30px;" width="50px" height="50px">    
+    <a href="/" class="logo">Scope Gents Arena</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="/products.html">Products</a>
+      <a href="/#contact">Contact</a>     
+    </div>
+  </nav>
+</header>
+
+<main class="product-gallery">
+  <h1>Our Products</h1>
+  
+  <div class="category-filter">
+    <button class="filter-button active" data-category="all">All</button>
+    <button class="filter-button" data-category="shoes">Shoes / Slippers</button>
+    <button class="filter-button" data-category="watches">Watches</button>
+    <button class="filter-button" data-category="clothing">Clothing</button>
+  </div>
+
+  <div class="gallery-grid">
+    <!-- Example Product Item -->
+    <div class="gallery-item" data-category="shoes">
+      <img src="s1.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+      <div class="item-details">
+        <h3>Classic Men's Shoe</h3>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="shoes">
+        <img src="s2.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Classic Men's Shoe</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="shoes">
+        <img src="s3.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Classic Men's Shoe</h3>
+        </div>
+      </div>
+
+      <div class="gallery-item" data-category="shoes">
+        <img src="s4.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Classic Men's Shoe</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="s5.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Classic Men's Shoe</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="s6.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Classic Men's Shoe</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l1.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Men's Easy Wear</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l2.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>X - Slippers</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l3.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Ahenema</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l4.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Ahenema</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l5.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>X - Slippers</h3>
+          <p>Handcrafted leather oxford shoes</p>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l6.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>X - Slippers</h3>
+         </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l7.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>X - Slippers</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l8.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>X - Slippers</h3>
+        </div>
+      </div>
+
+<div class="gallery-item" data-category="shoes">
+        <img src="l9.jpg" alt="Brown leather oxford shoes on wooden surface, professional product photography">
+        <div class="item-details">
+          <h3>Men's Easy Wear</h3>
+        </div>
+      </div>
+
+    <!-- Add more product items here following the same structure -->
+  </div>
+</main>
+
+<section id="contact" class="contact">
+  <h2>Get in Touch</h2>
+  <p>Contact us:</p>
+  <div class="contact-info">
+    <p><i class="fas fa-phone"></i> +233 057 090 7105</p>
+    <p><i class="fas fa-phone"></i> +233 053 207 0304</p>
+  </div>
+  <div class="social-links">
+    <a href="https://instagram.com/Scope_gents_arena" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</section>
+
+<script>
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      const category = button.dataset.category;
+      
+      galleryItems.forEach(item => {
+        if (category === 'all' || item.dataset.category === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  // Add animation on scroll for gallery items
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.gallery-item').forEach((item) => {
+    item.style.opacity = 0;
+    item.style.transform = 'translateY(20px)';
+    item.style.transition = 'opacity 0.5s, transform 0.5s';
+    observer.observe(item);
+  });
+</script>
+
+</body>
+</html>
